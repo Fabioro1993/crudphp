@@ -9,7 +9,7 @@ Instalación en windows (servidor local)
 
 3- Crear una base de datos
 
-4- Importar las tablas de la base de datos para ello vamos a buscar el archivo "crud_php.sql" en el directorio root de nuestro sistema, una vez localizado procedemos a hacer la importacion de los datos
+4- Importar las tablas de la base de datos para ello vamos a buscar el archivo "crud_workanda.sql" en el directorio root de nuestro sistema, una vez localizado procedemos a hacer la importacion de los datos
 
 5- Configurar los datos de conexión a la base de datos editando el archivo de configuración que se encuentra en la siguiente ruta: crudphp/config/db.php
 
