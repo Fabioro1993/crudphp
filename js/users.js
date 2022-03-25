@@ -27,8 +27,8 @@ function eliminar (id) {
 			beforeSend: function(objeto){
 				$("#result").html("Mensaje: Cargando...");
 			},
-			success: function(datos){
-				$("#result").html(datos);
+			success: function(data){
+				$("#result").html(data);
 				load(1);
 			}
 		});

@@ -20,7 +20,7 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<div class="btn-group pull-right">
-					<button type='button' class="btn btn-info" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus" ></span>Nuevo Usuario</button>
+					<button type="button" class="btn btn-info myModal"><span class="glyphicon glyphicon-plus" ></span>Nuevo Usuario</button>
 				</div>
 				<h4><i class='glyphicon glyphicon-search'></i>Buscar Usuarios</h4>
 			</div>
@@ -55,6 +55,17 @@
 </body>
 </html>
 <script>
+
+	$('.myModal').on('click',function(){
+		$("#firstname").val('');
+		$("#lastname").val('');
+		$("#user_email").val('');
+		$("#user_password_new").val('');
+		$("#user_password_repeat").val('');
+		$("#result_ajax").html('');
+		$('#myModal').modal({show:true});
+	});
+
 	$( "#save_user" ).submit(function( event ) {
 		$('#save_data').attr("disabled", true);
 
@@ -66,8 +77,8 @@
 			beforeSend: function(objeto){
 				$("#result_ajax").html("Mensaje: Cargando...");
 			},
-			success: function(datos){
-				$("#result_ajax").html(datos);
+			success: function(data){
+				$("#result_ajax").html(data);
 				$('#save_data').attr("disabled", false);
 				load(1);
 			}
@@ -86,8 +97,8 @@
 			beforeSend: function(objeto){
 				$("#result_ajax_user").html("Mensaje: Cargando...");
 			},
-			success: function(datos){
-				$("#result_ajax_user").html(datos);
+			success: function(data){
+				$("#result_ajax_user").html(data);
 				$('#update_data').attr("disabled", false);
 				load(1);
 			}
@@ -106,8 +117,8 @@
 			beforeSend: function(objeto){
 				$("#result_ajax_pass").html("Mensaje: Cargando...");
 			},
-			success: function(datos){
-				$("#result_ajax_pass").html(datos);
+			success: function(data){
+				$("#result_ajax_pass").html(data);
 				$('#update_data_pass').attr("disabled", false);
 				load(1);
 			}
@@ -117,6 +128,10 @@
 
 	function get_user_id(id){
 		$("#user_id_mod").val(id);
+		$("#user_password_new3").val('');
+		$("#user_password_repeat3").val('');
+		$("#result_ajax_pass").html('');
+		$('#myModal3').modal({show:true});
 	}
 
 	function get_data(id){
