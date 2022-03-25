@@ -46,7 +46,7 @@ if (empty($_POST['firstname'])){
         $query_check_user_name = mysqli_query($con,$sql);
         $query_check_user=mysqli_num_rows($query_check_user_name);
         if ($query_check_user == 1) {
-            $errors[] = "Lo sentimos , la dirección de correo electrónico ya está en uso.";
+            $errors[] = "Lo sentimos, la dirección de correo electrónico ya está en uso.";
         } else {
             $sql = "INSERT INTO users (firstname, lastname, user_password_hash, user_email, date_added)
                     VALUES('".$firstname."','".$lastname."', '" . $user_password_hash . "', '" . $user_email . "','".$date_added."');";
@@ -55,7 +55,7 @@ if (empty($_POST['firstname'])){
             if ($query_new_user_insert) {
                 $messages[] = "La cuenta ha sido creada con éxito.";
             } else {
-                $errors[] = "Lo sentimos , el registro falló. Por favor, regrese y vuelva a intentarlo.";
+                $errors[] = "Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.";
             }
         }
     } else {
@@ -63,29 +63,9 @@ if (empty($_POST['firstname'])){
 }
 
 if (isset($errors)){
-    ?>
-    <div class="alert alert-danger" role="alert">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Error!</strong>
-            <?php
-                foreach ($errors as $error) {
-                    echo $error;
-                }
-            ?>
-    </div>
-    <?php
+    include("errors.php");
 }
 if (isset($messages)){
-    ?>
-    <div class="alert alert-success" role="alert">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>¡Bien hecho!</strong>
-        <?php
-            foreach ($messages as $message) {
-                echo $message;
-            }
-        ?>
-    </div>
-    <?php
+    include("success.php");
 }
 ?>

@@ -55,7 +55,6 @@
 </body>
 </html>
 <script>
-
 	$('.myModal').on('click',function(){
 		$("#firstname").val('');
 		$("#lastname").val('');

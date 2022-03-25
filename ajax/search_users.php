@@ -89,7 +89,7 @@
 					<tr>
 						<td><?php echo $user_id; ?></td>
 						<td><?php echo $fullname; ?></td>
-						<td ><?php echo $user_email; ?></td>
+						<td><?php echo $user_email; ?></td>
 						<td><?php echo $date_added;?></td>
 					<td ><span class="pull-right">
 					<a href="#" class='btn btn-default' title='Editar usuario' onclick="get_data('<?php echo $user_id;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a>
